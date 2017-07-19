@@ -105,9 +105,9 @@ Images
 
 gulp.task( 'images', function() {
 	gulp.src( 'src/img/**/*' )
-		.pipe( p.changed( dest + 'img' ) )
+		.pipe( p.changed( dest + 'images' ) )
 		.pipe( p.imagemin( { optimizationLevel: 3, progressive: true, interlaced: true } ) )
-		.pipe( gulp.dest( dest + 'img' ) )
+		.pipe( gulp.dest( dest + 'images' ) )
 		.pipe( p.notify( 'Gulp Images Task Completed' ) );
 });
 

@@ -2,6 +2,8 @@
 Variables
 ==============================================================================*/
 
+console.log('working');
+
 var $win = $( window ),
 	$doc = $( document ),
 	$html = $( 'html' ),
@@ -33,31 +35,3 @@ $win.on( 'load', function() {
 	$html.addClass( 'loaded' );
 });
 
-/*==============================================================================
-Form Submit Replace
-==============================================================================*/
-
-$( '.submit-replace' ).on( 'click', function( e ) {
-	e.preventDefault();
-	$( this ).closest( 'form' ).submit();
-});
-
-/*==============================================================================
-pjax
-==============================================================================*/
-
-var siteURL = 'http://' + top.location.host.toString();
-
-$doc.pjax( "a[href^='" + siteURL + "'], a[href^='/'], a[href^='./'], a[href^='../'], a[href^='#']", '.main', {
-	fragment: '.main'
-});
-
-$doc.on( 'pjax:send', function() {
-	$html.addClass( 'loading' );
-});
-
-$doc.on( 'pjax:complete', function() {
-	$main.imagesLoaded( function() {
-		$html.removeClass( 'loading' );
-	});
-});

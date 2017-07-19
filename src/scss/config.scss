@@ -13,7 +13,7 @@ $x-small	:350px;
 
 // Fonts
 
-$font-family-primary 		: 'Oswald', sans-serif;
+$font-family-primary 		: 'Montserrat', sans-serif;
 $font-family-secondary		: 'Lora', serif; 
 
 $transition-duration-short 	: 400ms;
@@ -28,7 +28,7 @@ $easing-slow				: cubic-bezier(1, 1, 1, 1);
 
 $black 		: #4a4a4a;
 $red 		: #ed1c24;
-$grey 		: #8d8d8d;
+$grey 		: #5c5c5c;
 $dark-grey  : #888888;
 $light-grey : #f5f5f5;
 $copy-grey	: #5d5d5d;
@@ -38,3 +38,14 @@ $border-grey: #e5e5e5;
 // Widths
 
 $max-width	: 1250px;
+
+
+$color-scheme_1 	: #273851;
+$color-scheme_2		: #3b6cb4;
+$color-scheme_3		: #93b7ec;
+$color-scheme_4		: #677181;
+
+$dark-blue			: $color-scheme_1;
+$blue 				: $color-scheme_2;
+$light-blue			: $color-scheme_3;
+$spruce				: $color-scheme_4;

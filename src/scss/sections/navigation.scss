@@ -5,6 +5,12 @@ Navigation
 .main-nav {
 	border-top: 1px solid $border-grey;
 	margin-top: em(30);
+	.menu-item {
+		border-left: 1px solid $border-grey;
+		&:last-child {
+			border-right: 1px solid $border-grey;
+		}
+	}
 }
 
 .menu {
@@ -18,11 +24,9 @@ Navigation
 
 	}
 	&-item {
-		border-left: 1px solid $border-grey;
+		
 		padding: em(20) em(25);
-		&:last-child {
-			border-right: 1px solid $border-grey;
-		}
+		
 		a {
 			color: $blue;
 			font-size: em(18);

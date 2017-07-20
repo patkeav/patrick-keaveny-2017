@@ -3,4 +3,52 @@ Footer
 ==============================================================================*/
 
 .footer {
+	background: $dark-blue;
+	position: relative;
+	width: 100%;
+	&-break {
+		display: inline;
+		@media ( max-width: $mobile ) {
+			display: block;
+			opacity: 0;
+		}
+	}
+	&-inner {
+		padding: em(60) 0;
+		@media ( max-width: $tablet ) {
+			display: block;
+			margin: 0 auto;
+			width: 90%;
+
+		}
+	}
+	&-menu {
+		border-left: 1px solid $blue;
+		padding: 0 em(50);
+		@media ( max-width: $tablet ) {
+			border: 0;
+		}
+	}
+	&-nav {
+		
+		.menu-item {
+			padding: em(10) em(25);
+			a {
+				color: $white;
+				font-weight: 400;
+			}
+			@media ( max-width: $tablet ) {
+				padding: em(10) 0;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.copyright {
+	background: $darker-blue;
+	color: $lighter-blue;
+	font-size: em(12);
+	padding: em(20) 0;
+	text-align: center;
 }

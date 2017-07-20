@@ -11,9 +11,11 @@ Header
 			text-transform: uppercase;
 		}
 		&-title {
-			color: $dark-blue;
-			font-size: em(30);
-			font-weight: 800;
+			a {
+				color: $dark-blue;
+				font-size: em(30);
+				font-weight: 800;
+			}
 		}
 		&-subtitle {
 			color: $grey;

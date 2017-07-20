@@ -118,3 +118,24 @@ Widths
 .container {
 	overflow: hidden;
 }
+
+.content {
+	background-color: $white;
+	padding: em(160) em(25) 7% em(25);
+	min-height: 100%;
+	position: relative;
+	z-index: 1;
+	&-title {
+		color: $blue;
+		font-size: em(48);
+		font-weight: bold;
+	}
+	&-inner {
+		display: block;
+		margin: 0 auto;
+		max-width: $max-width;
+		position: relative;
+		z-index: 1;
+
+	}
+}

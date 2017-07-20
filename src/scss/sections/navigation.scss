@@ -2,5 +2,31 @@
 Navigation
 ==============================================================================*/
 
-.nav {
+.main-nav {
+	border-top: 1px solid $border-grey;
+	margin-top: em(30);
+}
+
+.menu {
+	&-nav-wrapper {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+	}
+	
+	&-header-menu {
+
+	}
+	&-item {
+		border-left: 1px solid $border-grey;
+		padding: em(20) em(25);
+		&:last-child {
+			border-right: 1px solid $border-grey;
+		}
+		a {
+			color: $blue;
+			font-size: em(18);
+			font-weight: bold;
+		}
+	}
 }

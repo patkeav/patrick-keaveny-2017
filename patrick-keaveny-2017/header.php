@@ -24,4 +24,5 @@
 			<h1 class="header-brand-title">Patrick C. Keaveny</h1>
 			<h2 class="header-brand-subtitle">Writer of Stories and Code</h2>
 		</div>
+		<? get_template_part('/includes/_components/main-nav.inc'); ?>
 	</header>

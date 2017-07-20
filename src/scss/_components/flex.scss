@@ -1,0 +1,73 @@
+/*==============================================================================
+Flex Classes
+==============================================================================*/
+
+.align-center {
+	align-items: center;
+}
+
+.align-end {
+	align-items: flex-end;
+}
+
+.align-start {
+	align-items: flex-start;
+}
+
+.flex {
+	display: flex;
+}
+
+.flex-child {
+	padding: 0 8px 16px;
+	.one-column & {
+		width: 100%;
+	}
+	.two-column & {
+		width: (1/2) * 100%;
+	}
+	.three-column & {
+		width: (1/3) * 100%;
+	}
+	.four-column & {
+		width: (1/4) * 100%;
+	}
+	.five-column & {
+		width: (1/5) * 100%;
+	}
+	.six-column & {
+		width: (1/6) * 100%
+	}
+	@media ( max-width: $desktop ) {
+		width: 50%!important;
+	}
+	@media ( max-width: $tablet ) {
+		width: 100%!important;
+	}
+}
+
+.flex-grid {
+	flex: 0 0 auto;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-space-between {
+	justify-content: space-between;
+}

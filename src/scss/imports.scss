@@ -3,10 +3,9 @@
 @import 'fonts';
 @import 'main';
 @import 'typography';
-@import 'sections/footer';
-@import 'sections/header';
-@import 'sections/navigation';
+
 @import 'wordpress';
 
 @import '_components/imports';
+@import 'pages/imports';
 @import 'sections/imports';

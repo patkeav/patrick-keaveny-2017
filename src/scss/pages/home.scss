@@ -1,0 +1,12 @@
+
+.home {
+	&-callout {
+		background-color: #f9f9f9;
+		border: 1px solid $blue;
+		padding: em(50);
+		p {
+			color: #677181;
+			font-size: em(24);
+		}
+	}
+}

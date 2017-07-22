@@ -1,0 +1,14 @@
+
+
+.yoast-breadcrumbs {
+	background: $border-grey;
+	border: 1px solid $alternate-grey;
+	color: $alternate-white;
+	display: inline-block;
+	font-size: em(12);
+	margin: 25px 0;
+	padding: 2px 15px;
+	a {
+		color: $alternate-white;
+	}
+}

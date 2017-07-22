@@ -12,13 +12,19 @@
 .post {
 	&-grid {
 		margin: 0 -10px;
+
 		&-image {
 			display: block;
 			height: auto;
 			width: 100%;
 		}
 		&-single {
-
+			&-categories {
+				color: $red;
+				font-size: em(14);
+				font-weight: 200;
+				padding: em(10) 0;
+			}
 			&-date {
 				color: $spruce;
 				font-size: em(14);

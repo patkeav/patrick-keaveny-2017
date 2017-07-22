@@ -23,6 +23,14 @@
 
 					<? while (have_posts()) : the_post(); ?>
 
+						<? 
+							$c = get_the_category();
+							$c_titles = array_map(function($t) { return $t->cat_name; }, $c); 
+							$c_desc = array_map(function($t) { return $t->category_description; }, $c);
+							$categories = get_categories();
+
+						?>
+
 						<div class="post-grid-single flex-child">
 
 							<a href="<? the_permalink(); ?>">
@@ -34,6 +42,8 @@
 							</h3>
 
 							<div class="post-grid-single-date"><? the_date('D, M j, Y'); ?></div> 
+
+							<div class="post-grid-single-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
 
 							<div class="post-grid-single-excerpt"><? the_field('excerpt_text'); ?></div>
 

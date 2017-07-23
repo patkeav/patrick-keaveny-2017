@@ -1,0 +1,18 @@
+
+
+.related {
+	border-top: 1px solid $border-grey;
+	&-title {
+		color: $dark-blue;
+		font-size: em(22);
+		font-weight: 900;
+		text-align: center;
+		span {
+			border-left: 1px solid $border-grey;
+			border-right: 1px solid $border-grey;
+			display: inline-block;
+			padding: em(20) em(20) 0 em(20);
+			text-transform: uppercase;
+		}
+	}
+}

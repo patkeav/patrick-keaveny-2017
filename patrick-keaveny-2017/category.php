@@ -3,7 +3,7 @@
 <? 
 	$ID = get_queried_object()->term_id; 
 
-	$feature_image = get_field('custom_category_image', 'category_' . $ID); print_r(get_fields()); 
+	$feature_image = get_field('custom_category_image', 'category_' . $ID); ; 
 
 ?>
 
@@ -41,9 +41,9 @@
 								<a href="<? the_permalink(); ?>"><? the_title(); ?></a>
 							</h3>
 
-							<div class="post-grid-single-date"><? the_date('D, M j, Y'); ?></div> 
+							<div class="post-date"><? the_date('D, M j, Y'); ?></div> 
 
-							<div class="post-grid-single-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
+							<div class="post-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
 
 							<div class="post-grid-single-excerpt"><? the_field('excerpt_text'); ?></div>
 

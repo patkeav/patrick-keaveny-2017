@@ -1,0 +1,19 @@
+/*==============================================================================
+Flexible Content Photo Gallery
+==============================================================================*/
+
+.content {
+	&-gallery {
+		&-single {
+			img {
+				display: block;
+				height: auto;
+				width: 100%;
+				@media ( max-width: $desktop ) {
+					display: block;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}

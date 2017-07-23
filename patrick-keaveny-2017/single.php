@@ -1,14 +1,42 @@
 <?php get_header(); ?>
 
-	<div class="content">
+<?
+
+	$c = get_the_category();
+	$c_titles = array_map(function($t) { return $t->cat_name; }, $c); 
+	$c_desc = array_map(function($t) { return $t->category_description; }, $c);
+	$categories = get_categories();
+
+?>
+
+	<div class="content post-single">
 
 		<div class="content-inner">
 
 			<? get_template_part('/includes/_components/breadcrumbs.inc') ; ?>
 
-			<h2 class="content-title"><?php the_title(); ?></h2>
+			<div class="post-single-featured-image">
+				<? the_post_thumbnail('4-2-lg'); ?>
+				<h1 class="post-single-title"><?php the_title(); ?></h1>
+			</div>
 
-			<div class="wysiwyg"><?php the_content(); ?></div>
+			<div class="post-single-meta ">
+				<div class="post-single-meta-inner flex justify-space-between">
+					<div class="post-date"><? the_date('D, M j, Y');  ?></div>
+					<div class="post-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
+				</div>
+			</div>
+
+
+			<div class="post-single-content wysiwyg"><?php the_content(); ?></div>
+
+			<?php get_template_part('/includes/flexible-content/main.inc'); ?>
+
+
+
+			<? get_template_part('/includes/blog/related-posts.inc'); ?>
+					
+
 
 		</div>
 

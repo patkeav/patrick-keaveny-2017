@@ -1,0 +1,11 @@
+/*==============================================================================
+Content Modules
+	- This file imports the styles for the modules that are added via the Flexible Content
+	field in the back-end
+	- These modules can be found in the Theme folder under:
+		includes/flexible-content/content-modules
+==============================================================================*/
+
+@import 'content-modules/divider';
+@import 'content-modules/general';
+@import 'content-modules/photo-gallery';

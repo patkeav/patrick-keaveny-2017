@@ -6,9 +6,20 @@ Navigation
 	border-top: 1px solid $border-grey;
 	margin-top: em(30);
 	.menu-item {
+		background: transparent;
 		border-left: 1px solid $border-grey;
+		transition: background $transition-fast $easing;
 		&:last-child {
 			border-right: 1px solid $border-grey;
+		}
+		.no-touch &:hover,
+		.no-touch &:focus {
+			background: $blue;
+			transition: background $transition-fast $easing;
+			a {
+				color: $white;
+				transition: color $transition-fast $easing;
+			}
 		}
 	}
 }
@@ -31,6 +42,7 @@ Navigation
 			color: $blue;
 			font-size: em(18);
 			font-weight: bold;
+			transition: color $transition-fast $easing;
 		}
 	}
 }

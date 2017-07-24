@@ -91,11 +91,18 @@ Helper Classes
 	border: 1px solid $red;
 	color: $red;
 	display: block;
-	font-size: em(14);
+	font-size: em(14); 
 	font-weight: bold;
 	max-width: 120px;
 	padding: em(15) 0;
 	text-align: center;
+	transition: background $transition-fast $easing, color $transition-fast $easing;
+	.no-touch &:hover, 
+	.no-touch &:focus {
+		background: $red;
+		color: $white;
+		transition: background $transition-fast $easing, color $transition-fast $easing;
+	}
 }
 
 /*==============================================================================
@@ -145,5 +152,8 @@ Widths
 		position: relative;
 		z-index: 1;
 
+	}
+	&.post-single {
+		padding: em(50) em(25) 7% em(25);
 	}
 }

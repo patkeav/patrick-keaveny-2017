@@ -50,7 +50,7 @@ if (has_tag()) :
 
 			<h4 class="related-title"> <span >Related Posts </span></h4>
 
-			<div class="flex flex-wrap three-column">
+			<div class="related-wrap flex flex-wrap three-column">
 
 				<?php while ($related_posts->have_posts()) : $related_posts->the_post(); ?>
 
@@ -62,8 +62,11 @@ if (has_tag()) :
 
 						<?php endif; ?>
 
-						<h4 class="related-single-title"><?php the_title(); ?></h4>
-
+						<h4 class="related-single-title">
+								<a href="<? the_permalink(); ?>">
+										<?php the_title(); ?>
+								</a>
+						</h4>
 					</div>
 
 				<?php endwhile; ?>

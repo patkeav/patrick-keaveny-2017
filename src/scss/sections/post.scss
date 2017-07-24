@@ -31,17 +31,34 @@
 		&-image {
 			display: block;
 			height: auto;
+			transform: scale(1);
+			transition: transform $transition-fast;
 			width: 100%;
+			.no-touch &:hover,
+			.no-touch &:focus {
+				transform: scale(2);
+				transition: transform $transition-slow
+			}
 		}
 		&-single {
-			
-			
 			&-title {
 				font-size: em(36);
 				font-weight: bold;
 				padding: em(7) 0;
 				a {
 					color: $dark-blue;
+					transition: color $transition-fast $easing;
+					.no-touch &:hover,
+					.no-touch &:focus {
+						color: $red;
+						transition: color $transition-fast $easing;
+					}
+				}
+			}
+			&-image {
+				&-link {
+					display: block;
+					overflow: hidden;
 				}
 			}
 		}
@@ -53,6 +70,7 @@
 			padding: em(50) 0;
 		}
 		&-featured-image {
+			margin-top: 100px;
 			position: relative;
 			img {
 				display: block;

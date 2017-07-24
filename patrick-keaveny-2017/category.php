@@ -33,7 +33,7 @@
 
 						<div class="post-grid-single flex-child">
 
-							<a href="<? the_permalink(); ?>">
+							<a href="<? the_permalink(); ?>" class="post-grid-single-image-link">
 								<img src="<? bloginfo('template_url'); ?>/images/placeholder.jpg" class="post-grid-image" />
 							</a>
 

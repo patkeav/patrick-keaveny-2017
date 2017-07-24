@@ -42,6 +42,7 @@
 		display: block;
 		margin-bottom: 10px;
 		position: relative;
+		transition: opacity $transition-fast $easing;
 		&-image {
 			display: block;
 			height: auto;
@@ -58,12 +59,23 @@
 			position: absolute;
 			text-align: center;
 			text-transform: uppercase;
+			transition:  left $transition-fast $easing, width $transition-fast $easing;
 			width: 160px;
 			@media ( max-width: $tablet ) {
 				left: 50%;
 				transform: translateX(-50%);
 				width: 100%;
 			}
+			.no-touch .home-category:hover & {
+				left: 0;
+				width: 100%;
+				transition:  left $transition-fast $easing, width $transition-fast $easing;
+			}
+		}
+		.no-touch &:hover,
+		.no-touch &:focus {
+			opacity: 0.8;
+			transition: opacity $transition-fast $easing;
 		}
 	}
 	&-connect {
@@ -78,10 +90,20 @@
 			&-item {
 				svg {
 					height: 35px;
+					transform: scale(1);
+					transition: transform $transition-fast $easing;
 					width: 35px;
+
 				}
 				svg, path {
 					fill: $red;
+				}
+				.no-touch &:hover,
+				.no-touch &:focus {
+					svg {
+						transform: scale(1.1);
+						transition: transform $transition-fast $easing;
+					}
 				}
 			}
 		}

@@ -71,9 +71,9 @@
 					<h3 class="home-categories-connect-title"> Connect </h3>
 					<div class="home-connect-inner">
 						<ul class="home-connect-social flex flex-wrap three-column">
-							<li class="home-connect-social-item flex-child"><a href="https://www.facebook.com/patrick.keaveny.7" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/facebook.svg'); ?></a></li>
-							<li class="home-connect-social-item flex-child"><a href="https://twitter.com/PatrickKeaveny" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/twitter.svg'); ?></a></li>
-							<li class="home-connect-social-item flex-child"><a href="https://www.instagram.com/patkeav412/" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/instagram.svg'); ?></a></li>
+							<li class="home-connect-social-item flex-child flex justify-center"><a href="https://www.facebook.com/patrick.keaveny.7" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/facebook.svg'); ?></a></li>
+							<li class="home-connect-social-item flex-child flex justify-center"><a href="https://twitter.com/PatrickKeaveny" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/twitter.svg'); ?></a></li>
+							<li class="home-connect-social-item flex-child flex justify-center"><a href="https://www.instagram.com/patkeav412/" target="_blank"><? svg(get_bloginfo('template_url') . '/images/svg/instagram.svg'); ?></a></li>
 
 						</ul>
 					</div>

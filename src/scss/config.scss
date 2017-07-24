@@ -16,11 +16,12 @@ $x-small	:350px;
 $font-family-primary 		: 'Montserrat', sans-serif;
 $font-family-secondary		: 'Lora', serif; 
 
-$transition-duration-short 	: 400ms;
-$transition-duration-long	: 1200ms;
+$transition-fast 			: 400ms;
+$transition-slow			: 1200ms;
 
 // Easings
 
+$easing 					: cubic-bezier(1, 0, 0, 1);
 $easing-fast				: cubic-bezier(1, 0, 0, 0); 
 $easing-slow				: cubic-bezier(1, 1, 1, 1); 
 

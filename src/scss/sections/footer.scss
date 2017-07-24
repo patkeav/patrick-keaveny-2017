@@ -36,6 +36,12 @@ Footer
 			a {
 				color: $white;
 				font-weight: 400;
+				transition: color $transition-fast $easing;
+				.no-touch &:hover,
+				.no-touch &:focus {
+					color: $red;
+					transition: color $transition-fast $easing;
+				}
 			}
 			@media ( max-width: $tablet ) {
 				padding: em(10) 0;

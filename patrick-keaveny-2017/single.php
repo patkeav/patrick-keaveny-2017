@@ -28,9 +28,15 @@
 			</div>
 
 
-			<div class="post-single-content wysiwyg"><?php the_content(); ?></div>
+			<div class="post-single-content wysiwyg">
 
-			<?php get_template_part('/includes/flexible-content/main.inc'); ?>
+				<?php the_content(); ?>
+
+				<?php get_template_part('/includes/flexible-content/main.inc'); ?>
+
+			</div>
+
+			
 
 
 

@@ -19,4 +19,6 @@ if( function_exists( 'add_image_size' ) ) {
 
 	add_image_size( 'home-feature', 542, 215, true );
 	add_image_size( 'home-posts', 710, 400, true );
+
+	add_image_size( 'blog-list', 1200, 400, true );
 }

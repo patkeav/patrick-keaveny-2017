@@ -1,27 +1,42 @@
-<?php get_header(); ?>
+<?php /* Template Name: Stories Template */ ?>
 
 <? 
-	$ID = get_queried_object()->term_id; 
 
-	$feature_image = get_field('custom_category_image', 'category_' . $ID); ; 
+	$args = array(
+		'post_type' => 'story',
+		'posts_per_page' => -1,
+	);
+
+	$stories = new WP_Query($args);
+
+	$header_image = (get_field('header_image') ? get_field('header_image')['sizes']['4-2-lg'] : get_bloginfo('template_url') . '/images/placeholder.jpg'); 
+
 
 ?>
 
+<?php get_header(); ?>
+
 	<div class="content">
 
-		<div class="content-inner">
-
-			<div class="category-feature"><img src="<? echo $feature_image['sizes']['4-1-lg']; ?>" /></div>
+		<div class="content-inner ">
 
 			<? get_template_part('/includes/_components/breadcrumbs.inc') ; ?>
 
-			<h2 class="content-title"><?php single_cat_title(); ?></h2>
+			<div class="post-single-featured-image">
+				<img src="<? echo $header_image; ?>" />
+				<h1 class="post-single-title"><?php the_title(); ?></h1>
+			</div>
+			<div class="post-single-meta ">
+				<div class="post-single-meta-inner flex justify-space-between">
+					<div class="post-date"><? the_date('D, M j, Y');  ?></div>
+				</div>
+			</div>
 
-			<? if (have_posts()) : ?>
+			<? if ($stories->have_posts()) : ?>
 
 				<div class="post-grid flex flex-wrap two-column">
 
-					<? while (have_posts()) : the_post(); ?>
+					<? while ($stories->have_posts()) : $stories->the_post(); ?>
 
 						<? 
 							$c = get_the_category();
@@ -61,6 +76,7 @@
 				</div>
 
 			<? endif; ?>
+
 
 		</div>
 

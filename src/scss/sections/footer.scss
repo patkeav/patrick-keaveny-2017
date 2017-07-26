@@ -27,6 +27,11 @@ Footer
 		padding: 0 em(50);
 		@media ( max-width: $tablet ) {
 			border: 0;
+			border-top: 1px solid $blue;
+			padding: em(25) 0;
+			&:last-child {
+				border-bottom: 1px solid $blue;
+			}
 		}
 	}
 	&-nav {

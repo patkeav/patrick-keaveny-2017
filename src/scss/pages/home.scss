@@ -3,10 +3,17 @@
 	&-callout {
 		background-color: #f9f9f9;
 		border: 1px solid $blue;
+		margin-bottom: 50px;
 		padding: em(50);
 		p {
 			color: #677181;
 			font-size: em(24);
+		}
+		@media ( max-width: $laptop ) {
+			padding: em(25);
+			.content-title {
+				font-size: em(32);
+			}
 		}
 	}
 	&-categories {
@@ -59,10 +66,12 @@
 			position: absolute;
 			text-align: center;
 			text-transform: uppercase;
-			transition:  left $transition-fast $easing, width $transition-fast $easing;
+			transition: left $transition-fast $easing, width $transition-fast $easing;
 			width: 160px;
 			@media ( max-width: $tablet ) {
 				left: 50%;
+				padding: 5px 0;
+				font-size: em(24);
 				transform: translateX(-50%);
 				width: 100%;
 			}
@@ -72,11 +81,7 @@
 				transition:  left $transition-fast $easing, width $transition-fast $easing;
 			}
 		}
-		.no-touch &:hover,
-		.no-touch &:focus {
-			opacity: 0.8;
-			transition: opacity $transition-fast $easing;
-		}
+
 	}
 	&-connect {
 		border-left: 1px solid $border-grey;
@@ -88,23 +93,33 @@
 			padding: em(25);
 			width: 50%;
 			&-item {
+				
 				svg {
-					height: 35px;
-					transform: scale(1);
+					height: 100%;
+					transform: scale(1) rotate(0deg);
 					transition: transform $transition-fast $easing;
-					width: 35px;
+					width: 100%;
 
 				}
 				svg, path {
 					fill: $red;
 				}
-				.no-touch &:hover,
-				.no-touch &:focus {
-					svg {
-						transform: scale(1.1);
-						transition: transform $transition-fast $easing;
+				a {
+					display: block;
+					height: 35px;
+					width: 35px;
+					.no-touch &:hover,
+					.no-touch &:focus {
+						svg {
+							transform: scale(1.5) rotate(360deg);
+							transition: transform $transition-fast $easing;
+						}
 					}
 				}
+			}
+			@media ( max-width: $laptop ) {
+				padding: em(20);
+				width: 100%;
 			}
 		}
 		&-twitter {
@@ -118,9 +133,85 @@
 		}
 	}
 	&-posts {
-
+		border-bottom: 1px solid $border-grey;
+		margin-bottom: 50px;
+		padding-bottom: em(50);
 	}
 	&-post {
-		
+		&-single {
+			background-size: cover;
+			background-position: center center;
+			display: block;
+			position: relative;
+			width: 100%;
+			img {
+				display: block;
+				height: auto;
+				width: 100%;
+			}
+			&-title {
+				background: $red;
+				bottom: 0;
+				color: $white;
+				font-size: em(27);
+				font-weight: 900;
+				padding: 15px;
+				position: absolute;
+				text-align: center;
+				text-transform: uppercase;
+				transition: left $transition-fast $easing, max-width $transition-fast $easing;
+				max-width: 500px;
+				width: 100%;
+				@media ( max-width: $tablet ) {
+					left: 50%;
+					padding: 5px 0;
+					font-size: em(24);
+					transform: translateX(-50%);
+					width: 100%;
+				}
+				#not-featured & {
+					background: transparent;
+					font-size: em(18);
+					left: 75px;
+				}
+				#featured & {
+					left: 35px;
+				}
+				.no-touch .home-post-single:hover &,
+				.no-touch .home-post-single:focus & {
+					left: 0!important;
+					max-width: 100%;
+					transition: left $transition-fast $easing, max-width $transition-fast $easing;
+					transform-origin: center;
+				}
+			}
+			&.fade-out {
+				visibility: hidden;
+				transition: visibility $transition-fast;
+			}
+			&.fade-in {
+				visibility: visible;
+				transition: visibility $transition-fast;
+			}
+			#not-featured & {
+				background-color: #000;
+				background-blend-mode: luminosity;
+				height: 100px;
+				margin-bottom: 5px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			#featured & {
+				height: 100%;
+			}
+		}
+		&_left, &_right {
+			position: relative;
+			width: 50%;
+		}
+		&_right {
+			padding-left: 5px;
+		}
 	}
 }

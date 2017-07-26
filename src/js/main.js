@@ -2,8 +2,6 @@
 Variables
 ==============================================================================*/
 
-console.log('working');
-
 var $win = $( window ),
 	$doc = $( document ),
 	$html = $( 'html' ),

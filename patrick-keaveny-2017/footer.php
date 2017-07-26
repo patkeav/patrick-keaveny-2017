@@ -21,5 +21,8 @@
 		  ga('send', 'pageview');
 
 		</script>
+		<? if (is_front_page()) : ?>
+			<script src="<? bloginfo('template_url'); ?>/js/home-feature.js?v=1"></script>
+		<? endif; ?>
 	</body>
 </html>

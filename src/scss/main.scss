@@ -153,6 +153,9 @@ Widths
 		z-index: 1;
 
 	}
+	.home & {
+		padding: em(35) em(25) 7% em(25);
+	}
 	&.post-single {
 		padding: em(50) em(25) 7% em(25);
 	}

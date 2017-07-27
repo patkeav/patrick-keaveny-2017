@@ -11,6 +11,7 @@ Flexible Content - Photo Gallery module
 $gallery = get_sub_field('gallery');
 $columns = str_replace('_', '-', get_sub_field('column_layout'));
 
+global $fc_key;
 
 ?>
 
@@ -21,9 +22,9 @@ $columns = str_replace('_', '-', get_sub_field('column_layout'));
 		<?php foreach ($gallery as $g) : ?>
 
 			<div class="content-gallery-single flex-child">
-
-				<img src="<?php echo $g['sizes']['1-1-md']; ?>" alt="<?php echo $g['alt']; ?>" title="<?php echo $g['title']; ?>"  />
-
+				<a href="<?php echo $g['url']; ?>" class="venobox vbox-item" data-gall="myGallery_<? echo $fc_key; ?>">
+					<img src="<?php echo $g['sizes']['1-1-md']; ?>" alt="<?php echo $g['alt']; ?>" title="<?php echo $g['title']; ?>"  />
+				</a>
 			</div>
 
 

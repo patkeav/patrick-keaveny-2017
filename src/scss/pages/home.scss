@@ -138,22 +138,32 @@
 		padding-bottom: em(50);
 	}
 	&-post {
-		&-single {
+		&-single {	
+			animation: slide-out $transition-slow;
 			background-size: cover;
 			background-position: center center;
+			border-top: 5px solid $white;
 			display: block;
-			position: relative;
-			width: 100%;
+			height: 100%;
+			max-height: 100px;
+			opacity: 1;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 50%;
+			background-color: #000;
+			background-blend-mode: luminosity;
+			transition: opacity $transition-slow;
 			img {
 				display: block;
 				height: auto;
 				width: 100%;
 			}
 			&-title {
-				background: $red;
+				
 				bottom: 0;
 				color: $white;
-				font-size: em(27);
+				font-size: em(18);
 				font-weight: 900;
 				padding: 15px;
 				position: absolute;
@@ -162,17 +172,14 @@
 				transition: left $transition-fast $easing, max-width $transition-fast $easing;
 				max-width: 500px;
 				width: 100%;
-				@media ( max-width: $tablet ) {
-					left: 50%;
-					padding: 5px 0;
-					font-size: em(24);
-					transform: translateX(-50%);
-					width: 100%;
-				}
-				#not-featured & {
-					background: transparent;
-					font-size: em(18);
-					left: 75px;
+				
+				.current & {
+					background: $red;
+					font-size: em(27);
+					max-width: 100%;
+					@media ( max-width: $desktop ) {
+						font-size: em(18);
+					}
 				}
 				#featured & {
 					left: 35px;
@@ -184,6 +191,39 @@
 					transition: left $transition-fast $easing, max-width $transition-fast $easing;
 					transform-origin: center;
 				}
+				@media ( max-width: $desktop ) {
+					align-items: center;
+					background: $red;
+					bottom: 0;
+					display: flex;
+					justify-content: center;
+					height: 60px;
+					left: 0;
+					right: 0;
+					top: 0;
+					margin: auto;
+					max-width: 100%;
+				}
+			}
+
+			&.pre-slide {
+				opacity: 0;
+				transition: opacity $transition-slow;
+			}
+			&.current {
+				animation: slide-in $transition-slow $easing;
+				background-blend-mode: initial;
+				border-top: 0;
+				border-right: 5px solid $white;
+				max-height: 100%;
+				right: auto;
+				transform-origin: center;
+				@media ( max-width: $desktop ) {
+					animation: none;
+					background-blend-mode: luminosity;
+					border: 0;
+					top: auto;
+				}
 			}
 			&.fade-out {
 				visibility: hidden;
@@ -194,10 +234,7 @@
 				transition: visibility $transition-fast;
 			}
 			#not-featured & {
-				background-color: #000;
-				background-blend-mode: luminosity;
-				height: 100px;
-				margin-bottom: 5px;
+				
 				&:last-child {
 					margin-bottom: 0;
 				}
@@ -205,13 +242,94 @@
 			#featured & {
 				height: 100%;
 			}
+			@media ( max-width: $desktop ) {
+				
+				border: 0;
+				height: 200px;
+				margin: 15px 0;
+				max-height: 100%;
+				position: relative;
+				top: auto!important;
+				
+				width: 100%;
+			}
 		}
 		&_left, &_right {
-			position: relative;
-			width: 50%;
+			
 		}
-		&_right {
-			padding-left: 5px;
+		&_wrap {
+			height: 500px;
+			position: relative;
+			width: 100%;
+			@media ( max-width: $desktop ) {
+				height: auto;
+			}
 		}
 	}
 }
+
+@keyframes first {
+	0% {
+
+	}
+	100% {
+		translateY(0);
+	}
+}
+@keyframes second {
+	0% {
+
+	}
+	100% {
+		translateY(0);
+	}
+}
+@keyframes third {
+	0% {
+
+	}
+	100% {
+		translateY(0);
+	}
+}
+@keyframes fourth {
+	0% {
+
+	}
+	100% {
+		translateY(0);
+	}
+}
+@keyframes fifth {
+	0% {
+
+	}
+	100% {
+		translateY(0);
+	}
+}
+
+@keyframes fade-out {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes slide-in {
+	0% {
+		left: 50%;
+		max-height: 100px;
+	}
+	20% {
+		left: 0;
+		transform: translateY(0);
+	}
+
+	100% {
+		max-height: 100%;
+	}
+}
+
+

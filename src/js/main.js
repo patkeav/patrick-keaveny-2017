@@ -33,3 +33,26 @@ $win.on( 'load', function() {
 	$html.addClass( 'loaded' );
 });
 
+/*==============================================================================
+Venobox 
+==============================================================================*/
+
+$doc.ready(function(){
+	$(".venobox").venobox({
+        framewidth: "50%",
+        frameheight: "auto",
+        border: "25px",
+        bgcolor: '#ffffff',
+        numeratio : true,
+        infinigall : true
+    })
+})
+
+$doc.ready(function(){
+	var top = 0;
+	$('.home-post-single').each(function(s){
+		
+		$(this).css('top', top );
+		top += 100;
+	});
+});

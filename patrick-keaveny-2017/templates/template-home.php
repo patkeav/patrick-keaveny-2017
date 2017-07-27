@@ -24,10 +24,8 @@
 
 		<div class="content-inner ">
 
-
-
 			<div class="home-posts flex justify-center">
-				<div id="featured" class="home-post_left">
+				<!-- <div id="featured" class="home-post_left">
 					<? $post = $featured_posts[0]; setup_postdata($post); ?>
 					<? $image = (get_field('excerpt_image') ? get_field('excerpt_image')['sizes']['home-posts'] : get_bloginfo('template_url') . '/images/placeholder-blog.jpg'); ?>
 					<a href="<? the_permalink(); ?>" id="<? get_the_ID(); ?>" class="home-post-single" style="background-image: url(<? echo $image; ?>)" >
@@ -36,17 +34,15 @@
 						</div>
 					</a>
 				</div>
-				<? wp_reset_postdata(); ?>
-				<div id="not-featured" class="home-post_right">
+				<? wp_reset_postdata(); ?> -->
+				<div class="home-post_wrap">
 					<? foreach ($featured_posts as $post) : setup_postdata($post); ?>
-							<? if ($i > 0) : ?>
 								<? $image = (get_field('excerpt_image') ? get_field('excerpt_image')['sizes']['home-posts'] : get_bloginfo('template_url') . '/images/placeholder-blog.jpg'); ?>
-								<a href="<? the_permalink(); ?>" id="<? get_the_ID(); ?>" class="home-post-single" style="background-image: url(<? echo $image; ?>)">
+								<a href="<? the_permalink(); ?>" id="<? get_the_ID(); ?>" class="home-post-single <? echo ($i == 0 ? 'current' : ''); ?>" style="background-image: url(<? echo $image; ?>)">
 									<div class="home-post-single-title">
 										<h2> <? the_title(); ?></h2>
 									</div>
 								</a>
-							<? endif; ?>
 						<? $i++; ?>
 					<? endforeach; ?>
 					<? wp_reset_postdata(); ?>

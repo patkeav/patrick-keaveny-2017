@@ -15,17 +15,34 @@
 
 			<? get_template_part('/includes/_components/breadcrumbs.inc') ; ?>
 
-			<div class="post-single-featured-image">
-				<? the_post_thumbnail('4-2-lg'); ?>
-				<h1 class="post-single-title"><?php the_title(); ?></h1>
-			</div>
+			<? if (has_post_thumbnail()) : ?>
 
-			<div class="post-single-meta ">
+				<div class="post-single-featured-image">
+					<? the_post_thumbnail('4-2-lg'); ?>
+					<h1 class="post-single-title"><?php the_title(); ?></h1>
+				</div>
+				<div class="post-single-meta ">
+					<div class="post-single-meta-inner flex justify-space-between">
+						<div class="post-date"><? the_date('D, M j, Y');  ?></div>
+						<div class="post-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
+					</div>
+				</div>
+
+			<? else : ?>
+
+				<div class="post-single-title-wrap no-image">
+					<h1 class="post-single-title"><?php the_title(); ?></h1>
+				</div>
+				<div class="post-single-meta no-image">
 				<div class="post-single-meta-inner flex justify-space-between">
 					<div class="post-date"><? the_date('D, M j, Y');  ?></div>
 					<div class="post-categories"><?php foreach ($c_titles as $key => $value) : echo ((int)$key != count($c_titles) - 1 ? ((int)$key != count($c_titles) - 1 ? $value . ' | ' : $value ) : $value); endforeach; ?></div>
 				</div>
 			</div>
+
+			<? endif; ?>
+
+			
 
 
 			<div class="post-single-content wysiwyg">

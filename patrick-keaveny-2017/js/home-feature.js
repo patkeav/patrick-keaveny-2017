@@ -1,13 +1,22 @@
 $(window).on('load', loop);
 
-var slides = [].slice.call(document.querySelectorAll('.home-post-single')),
+var slides = document.querySelectorAll('.home-post-single'),
 		tick = 0,
-		tickMax = 1000;
+		tickMax = 500,
+		slideNumber = 0;
 
 function loop() {
-	requestAnimationFrame(loop);
+
+	if ($(window).width() > 1000) {
+		requestAnimationFrame(loop);
+	}
+	
+
+	if (tick == tickMax - 50) {
+		$(slides[slideNumber]).addClass('pre-slide');
+	}
 	if (tick > tickMax) {
-		slides = changeSlide(slides);
+		changeSlideAnim(slides);
 		tick = 0;
 	}
 	else {
@@ -41,3 +50,22 @@ function changeSlide(s) {
  
 	return s;
 }
+
+function changeSlideAnim(s) {
+	var currentSlide = s[slideNumber];
+	var nextSlide = s[slideNumber + 1];
+	$(currentSlide).removeClass('current');
+	$(nextSlide).addClass('current');
+	$(currentSlide).removeClass('pre-slide');
+
+	if (slideNumber == s.length - 1) {
+		slideNumber = 0;
+		$(slides).removeClass('current');
+		$(s[0]).addClass('current');
+	}
+	else {
+		
+		slideNumber++;
+	}
+}
+

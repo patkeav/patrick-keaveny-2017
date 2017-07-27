@@ -4,14 +4,26 @@ Flexible Content Photo Gallery
 
 .content {
 	&-gallery {
+		margin: 0 -12px;
 		&-single {
+
 			img {
 				display: block;
 				height: auto;
+				outline: 2px solid $white;
+				outline-offset: -7px;
+				transition: outline-offset $transition-fast $easing;
 				width: 100%;
 				@media ( max-width: $desktop ) {
 					display: block;
 					margin: 0 auto;
+				}
+			}
+			.no-touch &:hover,
+			.no-touch &:focus {
+				img {
+					outline-offset: 0;
+					transition: outline-offset $transition-fast $easing;
 				}
 			}
 		}

@@ -48,11 +48,3 @@ $doc.ready(function(){
     })
 })
 
-$doc.ready(function(){
-	var top = 0;
-	$('.home-post-single').each(function(s){
-		
-		$(this).css('top', top );
-		top += 100;
-	});
-});

@@ -11,6 +11,6 @@
 			Copyright &copy; <?php echo date('Y'); ?> Patrick C. Keaveny <span class="footer-break"> | </span> All Rights Reserved
 		</div>
 		<?php wp_footer(); ?>
-		<script src="<? bloginfo('template_url'); ?>/js/main.min.js?v=11"></script>
+		<script src="<? bloginfo('template_url'); ?>/js/main.min.js?v=12"></script>
 	</body>
 </html>

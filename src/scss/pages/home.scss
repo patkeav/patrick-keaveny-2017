@@ -139,7 +139,8 @@
 	}
 	&-post {
 		&-single {	
-			animation: slide-out $transition-slow;
+			background-blend-mode: luminosity;
+			background-color: #000;
 			background-size: cover;
 			background-position: center center;
 			border-top: 5px solid $white;
@@ -147,32 +148,40 @@
 			height: 100%;
 			max-height: 100px;
 			opacity: 1;
+			overflow: hidden;
 			position: absolute;
 			right: 0;
-			top: 0;
-			width: 50%;
-			background-color: #000;
-			background-blend-mode: luminosity;
 			transition: opacity $transition-slow;
-			img {
-				display: block;
-				height: auto;
-				width: 100%;
+			width: 50%;
+			&:nth-child(1) {
+				border-top: 0;
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: 100px;
+			}
+			&:nth-child(3) {
+				top: 200px;
+			}
+			&:nth-child(4) {
+				top: 300px
+			}
+			&:nth-child(5) {
+				top: 400px;
 			}
 			&-title {
-				
 				bottom: 0;
 				color: $white;
 				font-size: em(18);
 				font-weight: 900;
+				max-width: 500px;
 				padding: 15px;
 				position: absolute;
 				text-align: center;
 				text-transform: uppercase;
-				transition: left $transition-fast $easing, max-width $transition-fast $easing;
-				max-width: 500px;
+				transition: transform $transition-fast $easing;
+				transform: scale(1);
 				width: 100%;
-				
 				.current & {
 					background: $red;
 					font-size: em(27);
@@ -181,15 +190,11 @@
 						font-size: em(18);
 					}
 				}
-				#featured & {
-					left: 35px;
-				}
 				.no-touch .home-post-single:hover &,
 				.no-touch .home-post-single:focus & {
-					left: 0!important;
-					max-width: 100%;
-					transition: left $transition-fast $easing, max-width $transition-fast $easing;
+					transform: scale(1.2);
 					transform-origin: center;
+					transition: transform $transition-fast $easing;
 				}
 				@media ( max-width: $desktop ) {
 					align-items: center;
@@ -199,25 +204,41 @@
 					justify-content: center;
 					height: 60px;
 					left: 0;
-					right: 0;
-					top: 0;
 					margin: auto;
 					max-width: 100%;
+					right: 0;
+					top: 0;
 				}
 			}
-
 			&.pre-slide {
 				opacity: 0;
 				transition: opacity $transition-slow;
 			}
+			&.no-luminosity {
+				background-blend-mode: initial;
+			}
 			&.current {
-				animation: slide-in $transition-slow $easing;
 				background-blend-mode: initial;
 				border-top: 0;
 				border-right: 5px solid $white;
 				max-height: 100%;
 				right: auto;
 				transform-origin: center;
+				&:nth-child(1) {
+					animation: first $transition-slow $easing forwards;
+				}
+				&:nth-child(2) {
+					animation: second $transition-slow $easing forwards;
+				}
+				&:nth-child(3) {
+					animation: third $transition-slow $easing forwards;
+				}
+				&:nth-child(4) {
+					animation: fourth $transition-slow $easing forwards;
+				}
+				&:nth-child(5) {
+					animation: fifth $transition-slow $easing forwards;
+				}
 				@media ( max-width: $desktop ) {
 					animation: none;
 					background-blend-mode: luminosity;
@@ -225,37 +246,15 @@
 					top: auto;
 				}
 			}
-			&.fade-out {
-				visibility: hidden;
-				transition: visibility $transition-fast;
-			}
-			&.fade-in {
-				visibility: visible;
-				transition: visibility $transition-fast;
-			}
-			#not-featured & {
-				
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-			#featured & {
-				height: 100%;
-			}
 			@media ( max-width: $desktop ) {
-				
 				border: 0;
 				height: 200px;
 				margin: 15px 0;
 				max-height: 100%;
 				position: relative;
 				top: auto!important;
-				
 				width: 100%;
 			}
-		}
-		&_left, &_right {
-			
 		}
 		&_wrap {
 			height: 500px;
@@ -270,66 +269,74 @@
 
 @keyframes first {
 	0% {
-
+		left: 50%;
+		max-height: 100px;
 	}
+	20% {
+		left: 0;
+		
+	}
+
 	100% {
-		translateY(0);
+		max-height: 100%;transform: translateY(0);
 	}
 }
 @keyframes second {
-	0% {
-
-	}
-	100% {
-		translateY(0);
-	}
-}
-@keyframes third {
-	0% {
-
-	}
-	100% {
-		translateY(0);
-	}
-}
-@keyframes fourth {
-	0% {
-
-	}
-	100% {
-		translateY(0);
-	}
-}
-@keyframes fifth {
-	0% {
-
-	}
-	100% {
-		translateY(0);
-	}
-}
-
-@keyframes fade-out {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-@keyframes slide-in {
 	0% {
 		left: 50%;
 		max-height: 100px;
 	}
 	20% {
 		left: 0;
-		transform: translateY(0);
+		
 	}
 
 	100% {
-		max-height: 100%;
+		max-height: 100%;transform: translateY(-100px);
 	}
 }
+@keyframes third {
+	0% {
+		left: 50%;
+		max-height: 100px;
+	}
+	20% {
+		left: 0;
+		
+	}
+
+	100% {
+		max-height: 100%;transform: translateY(-200px);
+	}
+}
+@keyframes fourth {
+	0% {
+		left: 50%;
+		max-height: 100px;
+	}
+	20% {
+		left: 0;
+		
+	}
+
+	100% {
+		max-height: 100%;transform: translateY(-300px);
+	}
+}
+@keyframes fifth {
+	0% {
+		left: 50%;
+		max-height: 100px;
+	}
+	20% {
+		left: 0;
+		
+	}
+
+	100% {
+		max-height: 100%;transform: translateY(-400px);
+	}
+}
+
 
 

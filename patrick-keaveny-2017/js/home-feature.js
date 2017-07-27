@@ -14,6 +14,7 @@ function loop() {
 
 	if (tick == tickMax - 50) {
 		$(slides[slideNumber]).addClass('pre-slide');
+		$(slides[slideNumber+1]).addClass('no-luminosity');
 	}
 	if (tick > tickMax) {
 		changeSlideAnim(slides);
@@ -57,6 +58,7 @@ function changeSlideAnim(s) {
 	$(currentSlide).removeClass('current');
 	$(nextSlide).addClass('current');
 	$(currentSlide).removeClass('pre-slide');
+	$(currentSlide).removeClass('no-luminosity');
 
 	if (slideNumber == s.length - 1) {
 		slideNumber = 0;

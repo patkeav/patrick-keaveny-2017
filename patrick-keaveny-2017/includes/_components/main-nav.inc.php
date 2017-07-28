@@ -9,7 +9,7 @@ $args = array(
 	'container_class' => 'menu-nav-wrapper',
 	'link_before' => '<span>',
 	'link_after' => '</span>',
-	'menu' => 'Main Navigation',
+	'menu' => 'header-menu',
 	'menu_class' => 'flex justify-center',
 );
 

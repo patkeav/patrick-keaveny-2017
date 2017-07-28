@@ -22,14 +22,11 @@
 
 			<? get_template_part('/includes/_components/breadcrumbs.inc') ; ?>
 
-			<div class="post-single-featured-image">
-				<img src="<? echo $header_image; ?>" />
-				<h1 class="post-single-title"><?php the_title(); ?></h1>
-			</div>
-			<div class="post-single-meta ">
-				<div class="post-single-meta-inner flex justify-space-between">
-					<div class="post-date"><? the_date('D, M j, Y');  ?></div>
-				</div>
+
+			<h1 class="story-title"><?php the_title(); ?></h1>
+
+			<div class="story-intro wysiwyg">
+				<? the_content(); ?>
 			</div>
 
 			<? if ($stories->have_posts()) : ?>
@@ -44,16 +41,11 @@
 							$c_desc = array_map(function($t) { return $t->category_description; }, $c);
 							$categories = get_categories();
 							$excerpt = get_field('excerpt_text');
-							$image = (get_field('excerpt_image') ? get_field('excerpt_image')['sizes']['blog-list'] : get_bloginfo('template_url') . '/images/placeholder-blog.jpg');
 						?>
 
 						<div class="post-grid-single flex flex-child">
 
 							<div class="post-grid-single-wrap"> 
-
-								<a href="<? the_permalink(); ?>" class="post-grid-single-image-link">
-									<img src="<? echo $image; ?>" class="post-grid-image" />
-								</a>
 
 								<h3 class="post-grid-single-title">
 									<a href="<? the_permalink(); ?>"><? the_title(); ?></a>

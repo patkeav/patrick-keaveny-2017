@@ -18,6 +18,13 @@
 	</head>
 	<body <?php body_class( 'page-' . $post->post_name ); ?>>
 	<? get_template_part('/includes/_components/color-gradient.inc'); ?>
+	<? if (is_front_page()) : ?>
+		<div class="loader">
+			<div class="loader-inner">
+				<? svg(get_stylesheet_directory_uri() . '/images/svg/loader.svg'); ?>
+			</div>
+		</div>
+	<? endif; ?>
 	<header class="header">
 		<div class="header-brand">
 			<h1 class="header-brand-title"><a href="<? bloginfo('url'); ?>">Patrick C. Keaveny</a></h1>

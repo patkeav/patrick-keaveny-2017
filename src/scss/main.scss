@@ -129,13 +129,28 @@ Widths
 	width: 100%;
 }
 
+.story-title {
+	color: $red;
+	font-size: em(42);
+	font-weight: 900;
+	padding: em(15) 0;
+	text-align: center;
+}
+.story-intro {
+	border-top: 1px solid $border-grey;
+	border-bottom: 1px solid $border-grey;
+	margin-bottom: 25px;
+	padding: em(25) 0;
+	text-align: center;
+}
+
 .container {
 	overflow: hidden;
 }
 
 .content {
 	background-color: $white;
-	padding: em(160) em(25) 7% em(25);
+	padding: em(25) em(25) 7% em(25);
 	min-height: 100%;
 	position: relative;
 	z-index: 1;
@@ -153,13 +168,5 @@ Widths
 		z-index: 1;
 
 	}
-	.home & {
-		padding: em(35) em(25) 7% em(25);
-	}
-	&.post-single {
-		padding: em(50) em(25) 7% em(25);
-	}
-	&.page {
-		padding: em(25) em(25) 7% em(25);
-	}
+	
 }

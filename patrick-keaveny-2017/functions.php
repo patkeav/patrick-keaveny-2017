@@ -1,6 +1,7 @@
 <?php
 
 require_once('functions/wordpress.php');
+require_once('functions/seo.php');
 
 require_once('functions/general.php');
 require_once('functions/admin.php');

@@ -42,8 +42,6 @@
 
 			<? endif; ?>
 
-			
-
 
 			<div class="post-single-content wysiwyg">
 
@@ -53,13 +51,7 @@
 
 			</div>
 
-			
-
-
-
 			<? get_template_part('/includes/blog/related-posts.inc'); ?>
-					
-
 
 		</div>
 

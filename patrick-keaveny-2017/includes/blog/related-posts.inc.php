@@ -54,18 +54,20 @@ if (has_tag()) :
 
 				<?php while ($related_posts->have_posts()) : $related_posts->the_post(); ?>
 
+					<? $image = (get_field('excerpt_image') ? get_field('excerpt_image')['sizes']['blog-list'] : get_bloginfo('template_url') . '/images/placeholder-blog.jpg'); ?>
+
 					<div class="related-single flex-child">
 
-						<?php if (has_post_thumbnail()) : ?>
-
-							<div class="related-single-thumbnail"><?php the_post_thumbnail('3-2-sm'); ?></div>
-
-						<?php endif; ?>
+						<div class="related-single-thumbnail">
+							<a href="<? the_permalink(); ?>" class="post-grid-single-image-link">
+								<img src="<? echo $image; ?>" class="post-grid-image" />
+							</a>
+						</div>
 
 						<h4 class="related-single-title">
-								<a href="<? the_permalink(); ?>">
-										<?php the_title(); ?>
-								</a>
+							<a href="<? the_permalink(); ?>">
+									<?php the_title(); ?>
+							</a>
 						</h4>
 					</div>
 

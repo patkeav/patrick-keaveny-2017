@@ -15,7 +15,30 @@
 			text-transform: uppercase;
 		}
 	}
+	&-single {
+		&-title {
+			background: $red;
+			padding: em(15) 0;
+			font-size: em(18);
+			font-weight: 900;
+			text-align: center;
+			a {
+				color: $white;
+				.no-touch &:hover,
+				.no-touch &:focus {
+					color: $white;
+				}
+			}
+		}
+		@media ( max-width: $laptop ) {
+			padding: em(15) 0;
+		}
+	}
 	&-wrap {
+		margin-top: 25px;
 		padding: em(25);
+		@media ( max-width: $laptop ) {
+			padding: em(25) 0;
+		}
 	}
 }

@@ -16,5 +16,10 @@
     "gulp-uglify": "^1.5.1",
     "gulp-svgmin": "~1.2.3",
     "jshint": "^2.8.0"
+  },
+  "dependencies": {
+    "gifsicle": "^3.0.4",
+    "jpegtran-bin": "^3.2.0",
+    "node-sass": "^4.7.2"
   }
 }

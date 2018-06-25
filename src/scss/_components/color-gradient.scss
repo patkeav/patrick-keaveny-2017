@@ -9,6 +9,10 @@
 
 }
 
+.single .color-gradient {
+	display: none;
+}
+
 @keyframes move-gradient {
 	0% {
 		background-position: 0% 50%;

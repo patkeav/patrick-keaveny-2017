@@ -1,0 +1,124 @@
+
+.portfolio {
+	&-grid {
+		&-title {
+			color: $red!important;
+			padding: 12px 0 24px 0!important;
+		}
+		&-single {
+			padding: 0 12px 50px;
+			&-wrap {
+				
+			}
+			&-overlay {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: rgba($color-scheme_1, 0.6);
+				color: white;
+				padding: 0 24px;
+
+				//transform: translateY(100%);
+				transition: background 600ms;
+
+				// &:before {
+				// 	content: '';
+				// 	position: absolute;
+				// 	top: 0;
+				// 	right: 0;
+				// 	left: 0;
+				// 	bottom: 0;
+				// 	background: rgba($red, 1);
+				// }
+
+				&-inner {
+					height: 100%;
+				}
+
+				.no-touch &:hover {
+					background: rgba($color-scheme_1, 1);
+					transition: background 600ms;
+
+					// &:before {
+					// 	background: rgba($red, 0);
+					// 	transform: scale(2);
+					// }
+				}
+				.touch & {
+					background: rgba($color-scheme_1, 0.8);
+					transition: background 600ms;
+				}
+			}
+			&-info {
+				position: relative;
+				overflow: hidden;
+				&-desc {
+					transform: translateY(-200%);
+					transition: transform 600ms;
+
+					.no-touch .portfolio-grid-single-overlay:hover & {
+						transform: translateY(0);
+						transition: transform 600ms;
+					}
+
+					.touch & {
+						transform: translateY(0);
+						transition: transform 600ms;
+					}
+				}
+				&-logo {
+					display: block;
+					margin: 0 auto;
+					padding: 8px 24px 8px 0;
+					width: 100%;
+					border-bottom: 3px solid white;
+					text-align: left;
+					font-size: 22px;
+					font-weight: bold;
+				}
+				&-responsibilities {
+					transform: translateY(500%);
+					transition: transform 600ms;
+
+					.no-touch .portfolio-grid-single-overlay:hover & {
+						transform: translateY(0);
+						transition: transform 600ms;
+					}
+					.touch & {
+						transform: translateY(0);
+						transition: transform 600ms;
+					}
+				}
+			}
+			&-image {
+				display: block;
+				height: auto;
+				width: 100%;
+				border: 1px solid rgba($red, 0.5);
+			}
+
+			.read-more {
+				background: $red;
+				color: white;
+			}
+		}
+	}
+}
+
+.responsibilities {
+	display: none;
+	list-style-type: circle;
+	margin: 12px 18px;
+
+	.responsibility {
+		padding: 4px;
+		font-weight: 700;
+	}
+
+	@media ( min-width: $landscape) {
+		display: block;
+	}
+}
+

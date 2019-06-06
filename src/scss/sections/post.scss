@@ -116,9 +116,10 @@
 			.no-image & {
 				background: transparent;
 				color: $dark-blue;
-				padding: 25px 0;
+				left: 0;
+				padding: 25px 50px;
 				position: relative;
-				text-align: left;
+				text-align: center;
 			}
 			&-wrap {
 				border-top: 1px solid $border-grey;

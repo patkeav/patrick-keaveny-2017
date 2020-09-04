@@ -20,6 +20,6 @@
   "dependencies": {
     "gifsicle": "^3.0.4",
     "jpegtran-bin": "^3.2.0",
-    "node-sass": "^4.7.2"
+    "node-sass": "^4.13.1"
   }
 }

@@ -7,9 +7,10 @@
 	$c_desc = array_map(function($t) { return $t->category_description; }, $c);
 	$categories = get_categories();
 
-?>
+?> 
 
 	<div class="content post-single">
+	test
 
 		<div class="content-inner">
 

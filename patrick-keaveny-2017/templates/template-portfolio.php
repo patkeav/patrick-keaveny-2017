@@ -17,7 +17,7 @@
 			<? get_template_part('/includes/_components/breadcrumbs.inc') ; ?>
 
 
-			<h1 class="story-title"><?php the_title(); ?></h1>
+			<h1 class="story-title" style="0 0 .9375em 0"><?php the_title(); ?></h1>
 
 			<div class="story-intro wysiwyg">
 				<? the_content(); ?>

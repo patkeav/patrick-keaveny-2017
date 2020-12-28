@@ -10,7 +10,6 @@
 ?> 
 
 	<div class="content post-single">
-	test
 
 		<div class="content-inner">
 

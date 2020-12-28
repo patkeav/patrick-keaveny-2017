@@ -6,7 +6,7 @@ Breadcrumbs component
 
 if ( function_exists('yoast_breadcrumb') ) { 
 	yoast_breadcrumb('
-		<div class="yoast-breadcrumbs">','</div>
+		<div class="yoast-breadcrumbs" style="2px 15px">','</div>
 	');
 }
 

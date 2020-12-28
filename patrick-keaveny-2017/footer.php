@@ -7,6 +7,8 @@
 				<div class="footer-menu"><? get_template_part('/includes/footer/footer-menu-categories.inc'); ?></div>
 			</div>
 		</footer>
+<style type="text/css">
+	.page-id-1324 .story-intro.wysiwyg p:last-child { display: none }</style>
 		<div class="copyright">
 			Copyright &copy; <?php echo date('Y'); ?> Patrick C. Keaveny <span class="footer-break"> | </span> All Rights Reserved
 		</div>
